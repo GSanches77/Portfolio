@@ -1,4 +1,4 @@
-/* Estilos Globais */
+
 :root {
     --primary-color: #5d5dff; /* Cor azul-púrpura */
     --background-color: #121212;
@@ -73,7 +73,6 @@ p {
     background-color: var(--primary-color);
 }
 
-/* Header e Navegação */
 #header {
     background-color: rgba(0, 0, 0, 0.7);
     backdrop-filter: blur(5px);
@@ -118,7 +117,6 @@ p {
     color: var(--primary-color);
 }
 
-/* Seção Hero */
 .hero {
     height: 100vh;
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
@@ -133,13 +131,11 @@ p {
 
 .hero-content h1 {
     font-size: 3.5rem;
-    /* Ajuste para remover a margem inferior padrão e aproximar os H1 */
     margin-bottom: 0; 
 }
 
-/* Adicione esta regra para controlar o espaçamento entre o último H1 e o subtítulo */
 .hero-content h1.name {
-    margin-bottom: 10px; /* Altere este valor para controlar a distância do subtítulo */
+    margin-bottom: 10px; 
 }
 
 .hero-content p {
@@ -170,7 +166,6 @@ p {
     color: var(--primary-color);
 }
 
-/* Seção Destaques */
 .highlights {
     padding: 80px 0;
     display: flex;
@@ -212,7 +207,6 @@ p {
     color: var(--secondary-text-color);
 }
 
-/* Seção Sobre Mim */
 .about {
     display: flex;
     gap: 50px;
@@ -246,12 +240,9 @@ p {
     transition: transform 0.3s ease-in-out;
 }
 
-/* Adiciona o efeito quando o mouse passa por cima */
 .about .image-content img:hover {
-    transform: translateY(-10px); /* Move a imagem 10px para cima */
+    transform: translateY(-10px); 
 }
-
-/* Seção Educação */
 .education {
     padding: 80px 0;
     text-align: center;
@@ -361,7 +352,6 @@ p {
     border: 1px solid var(--border-color);
 }
 
-/* Seção Experiência (Timeline) */
 .experience {
     padding: 80px 0;
 }
@@ -476,7 +466,7 @@ p {
 .video-container {
     position: relative;
     width: 100%;
-    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    padding-top: 56.25%; 
     margin-bottom: 30px;
 }
 
@@ -563,46 +553,131 @@ footer {
     gap: 20px;
 }
 
-/* Responsividade para Telas Menores */
+
 @media (max-width: 768px) {
-    .nav-links {
-        display: none;
-    }
+    
 
-    .hero-content h1 {
-        font-size: 2.5rem;
-    }
-
-    .about, .skills .skills-container, .education-cards {
+    .nav-bar {
         flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        display: flex; 
+        flex-direction: column;
+        gap: 15px;
+        padding: 0;
+        text-align: center;
+    }
+    
+    .nav-links li {
+        margin-left: 0;
+    }
+
+ 
+    .hero-content h1 {
+        font-size: 2.2rem;
+        line-height: 1.2;
+    }
+    
+    .hero-content p {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+
+    h2 {
+        font-size: 2rem;
+        margin-top: 30px;
+    }
+
+    .about, 
+    .skills .skills-container, 
+    .education-cards,
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about .text-content, 
+    .about .image-content {
+        min-width: 100%;
         text-align: center;
     }
 
-    .about .text-content, .about .image-content {
-        min-width: unset;
+ 
+    .highlight-card {
+        width: 100%;
+        max-width: 350px; 
     }
+
+    .education-card {
+        width: 100%;  
+        max-width: 100%;
+        padding: 20px;
+    }
+
 
     .timeline::before {
         left: 20px;
     }
 
-    .timeline-item, .timeline-item:nth-child(even) {
+    .timeline-item {
         width: 100%;
-        left: 0;
         padding-left: 50px;
         padding-right: 0;
+        margin-bottom: 30px;
     }
 
-    .timeline-item::after {
-        left: 14px;
+    .timeline-item:nth-child(even) {
+        left: 0;
+        padding-left: 50px; 
+    }
+
+    .timeline-item::after,
+    .timeline-item:nth-child(even)::after {
+        left: 14px; 
+    }
+
+
+    #contact-form {
+        padding: 25px 15px;
+    }
+
+    .form-group {
+        flex-direction: column;
+        align-items: stretch; 
+    }
+
+    .form-group label {
+        min-width: unset;
+        margin-bottom: 8px;
+        text-align: left;
     }
 }
 
-/* Efeito de digitação e cursor */
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+    
+    .btn {
+        width: 100%; 
+        text-align: center;
+    }
+    
+    .skills-container {
+        gap: 30px;
+    }
+    
+    .portfolio-grid {
+        grid-template-columns: 1fr; 
+    }
+}
+
 .cursor {
     display: inline-block;
     width: 2px;
-    background-color: var(--text-color); /* Cor do cursor */
+    background-color: var(--text-color); 
     margin-left: 5px;
     animation: blink 1s infinite step-end;
 }
@@ -613,13 +688,13 @@ footer {
     }
 }
 
-/* Esconde o texto inicialmente para a animação */
+
 .typing-text {
     white-space: nowrap;
     overflow: hidden;
 }
 
-/* Estilização da Grid de Portfólio */
+
 .portfolio-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -657,7 +732,7 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(93, 93, 255, 0.8); /* Sua cor primária com transparência */
+    background: rgba(93, 93, 255, 0.8); 
     display: flex;
     justify-content: center;
     align-items: center;
