@@ -105,3 +105,19 @@ const line1Element = document.querySelector('.typing-line-1');
         }
     });
 });
+const mobileMenuIcon = document.querySelector('.mobile-menu-icon');
+    const navLinks = document.querySelector('.nav-links');
+
+    mobileMenuIcon.addEventListener('click', () => {
+        // Alterna a classe 'active' no menu e no ícone
+        navLinks.classList.toggle('active');
+        mobileMenuIcon.classList.toggle('active');
+    });
+
+    // Opcional: Fechar o menu ao clicar em um link
+    document.querySelectorAll('.nav-links li a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            mobileMenuIcon.classList.remove('active');
+        });
+    });
