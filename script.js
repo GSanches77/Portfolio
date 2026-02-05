@@ -106,12 +106,15 @@ const line1Element = document.querySelector('.typing-line-1');
     });
 });
 const mobileMenuIcon = document.querySelector('.mobile-menu-icon');
-    const navLinks = document.querySelector('.nav-links');
+const navLinks = document.querySelector('.nav-links');
 
+if (mobileMenuIcon && navLinks) {
     mobileMenuIcon.addEventListener('click', () => {
         // Alterna a classe 'active' no menu e no ícone
         navLinks.classList.toggle('active');
         mobileMenuIcon.classList.toggle('active');
+        const isExpanded = navLinks.classList.contains('active');
+        mobileMenuIcon.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
     });
 
     // Opcional: Fechar o menu ao clicar em um link
@@ -119,5 +122,15 @@ const mobileMenuIcon = document.querySelector('.mobile-menu-icon');
         link.addEventListener('click', () => {
             navLinks.classList.remove('active');
             mobileMenuIcon.classList.remove('active');
+            mobileMenuIcon.setAttribute('aria-expanded', 'false');
         });
     });
+
+    document.addEventListener('keydown', event => {
+        if (event.key === 'Escape') {
+            navLinks.classList.remove('active');
+            mobileMenuIcon.classList.remove('active');
+            mobileMenuIcon.setAttribute('aria-expanded', 'false');
+        }
+    });
+}
