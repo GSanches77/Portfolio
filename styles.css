@@ -554,11 +554,9 @@ footer {
 
 
 @media (max-width: 768px) {
-    
-
     .nav-bar {
-        flex-direction: column;
-        gap: 15px;
+        flex-direction: row;
+        justify-content: space-between;
     }
 
     .nav-links {
@@ -608,6 +606,12 @@ footer {
         height: min(280px, 85vw);
     }
 
+    .skills .skills-container .hard-skills,
+    .skills .skills-container .soft-skills {
+        width: 100%;
+        max-width: 100%;
+    }
+
     .highlight-card {
         width: 100%;
         max-width: 350px; 
@@ -628,7 +632,7 @@ footer {
         width: 100%;
         padding-left: 50px;
         padding-right: 0;
-        margin-bottom: 30px;
+        margin-bottom: 50px;
     }
 
     .timeline-item:nth-child(even) {
