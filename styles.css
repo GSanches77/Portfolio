@@ -232,11 +232,10 @@ p {
 }
 
 .about .image-content img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    
-    /* Adiciona a transição suave */
+    width: 450px;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 50%;
     transition: transform 0.3s ease-in-out;
 }
 
@@ -604,7 +603,11 @@ footer {
         text-align: center;
     }
 
- 
+    .about .image-content img {
+        width: min(280px, 85vw);
+        height: min(280px, 85vw);
+    }
+
     .highlight-card {
         width: 100%;
         max-width: 350px; 
